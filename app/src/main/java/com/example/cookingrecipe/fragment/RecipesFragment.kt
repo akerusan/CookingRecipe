@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookingrecipe.viewModels.MainViewModel
 import com.example.cookingrecipe.R
@@ -50,6 +51,10 @@ class RecipesFragment : Fragment() {
         setupRecyclerView()
 
         verifyDatabase()
+
+        binding.sortRecipesFab.setOnClickListener {
+            findNavController().navigate(R.id.action_recipesFragment_to_listBottomSheetFragment)
+        }
 
         return binding.root
     }

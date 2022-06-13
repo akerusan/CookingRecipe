@@ -22,4 +22,10 @@
     <style name="Theme.CookingRecipe.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.CookingRecipe.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+    </style>
+
 </resources>

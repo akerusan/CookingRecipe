@@ -8,12 +8,16 @@
 
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.example.cookingrecipe.fragment.RecipesFragment"
+        android:name="com.example.cookingrecipe.fragment.RecipesListFragment"
         android:label="Recipes"
         tools:layout="@layout/fragment_recipes" >
         <action
             android:id="@+id/action_recipesFragment_to_listBottomSheetFragment"
             app:destination="@id/listBottomSheetFragment" />
+        <argument
+            android:name="backFromBottomSheet"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
 
     <fragment

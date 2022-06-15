@@ -8,7 +8,7 @@ import com.example.cookingrecipe.data.database.RecipesEntity
 import com.example.cookingrecipe.models.FoodRecipe
 import com.example.cookingrecipe.utils.NetworkResult
 
-class RecipesBinding {
+class RecipesErrorBinding {
 
     companion object {
 
@@ -30,7 +30,7 @@ class RecipesBinding {
 
         @JvmStatic
         @BindingAdapter("getApiResponseForText", "getDatabaseForText", requireAll = true)
-        fun ErrorTextView(
+        fun errorTextView(
             textView: TextView,
             response: NetworkResult<FoodRecipe>?,
             db: List<RecipesEntity>?

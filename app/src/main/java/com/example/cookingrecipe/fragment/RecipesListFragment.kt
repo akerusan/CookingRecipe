@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookingrecipe.viewModels.MainViewModel
 import com.example.cookingrecipe.R
@@ -21,7 +23,9 @@ import kotlinx.android.synthetic.main.fragment_recipes.view.*
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class RecipesFragment : Fragment() {
+class RecipesListFragment : Fragment() {
+
+    private val args by navArgs<RecipesListFragmentArgs>()
 
     private var _binding: FragmentRecipesBinding? = null
     private val binding get() = _binding!!
@@ -33,7 +37,7 @@ class RecipesFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        // Initializing View Models
         viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
         recipesViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
     }
@@ -51,6 +55,10 @@ class RecipesFragment : Fragment() {
 
         verifyDatabase()
 
+        binding.sortRecipesFab.setOnClickListener {
+            findNavController().navigate(R.id.action_recipesFragment_to_listBottomSheetFragment)
+        }
+
         return binding.root
     }
 
@@ -63,7 +71,7 @@ class RecipesFragment : Fragment() {
     private fun verifyDatabase() {
         lifecycleScope.launch {
             viewModel.getRecipesFromLocal.observeOnce(viewLifecycleOwner) { database ->
-                if (database.isNotEmpty()) {
+                if (database.isNotEmpty() && !args.backFromBottomSheet) {
                     mAdapter.setData(database[0].foodRecipe)
                     hideShimmer()
                 } else {

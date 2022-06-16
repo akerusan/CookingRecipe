@@ -16,6 +16,7 @@ import com.example.cookingrecipe.utils.Constants.Companion.QUERY_API_KEY
 import com.example.cookingrecipe.utils.Constants.Companion.QUERY_DIET
 import com.example.cookingrecipe.utils.Constants.Companion.QUERY_FILL_INGREDIENTS
 import com.example.cookingrecipe.utils.Constants.Companion.QUERY_NUMBER
+import com.example.cookingrecipe.utils.Constants.Companion.QUERY_SEARCH
 import com.example.cookingrecipe.utils.Constants.Companion.QUERY_TYPE
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -40,7 +41,7 @@ class RecipesViewModel @ViewModelInject constructor(
             dataStoreRepository.saveMealAndDietType(mealType, mealTypeId, dietType, dietTypeId)
         }
 
-    fun saveBackOnline(isBackOnline: Boolean) =
+    private fun saveBackOnline(isBackOnline: Boolean) =
         viewModelScope.launch(Dispatchers.IO) {
             dataStoreRepository.saveBackOnline(isBackOnline)
         }
@@ -64,6 +65,19 @@ class RecipesViewModel @ViewModelInject constructor(
 
         return queries
     }
+
+    fun createSearchQueries(searchQuery: String): HashMap<String, String> {
+        val queries: HashMap<String, String> = HashMap()
+
+        queries[QUERY_SEARCH] = searchQuery
+        queries[QUERY_NUMBER] = DEFAULT_RECIPES_NUMBER
+        queries[QUERY_API_KEY] = API_KEY
+        queries[QUERY_ADD_RECIPE_INFORMATION] = "true"
+        queries[QUERY_FILL_INGREDIENTS] = "true"
+
+        return queries
+    }
+
 
     fun showNetworkStatus() {
         if (!hasNetwork) {

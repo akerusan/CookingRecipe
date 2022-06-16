@@ -30,9 +30,14 @@ class MainViewModel @ViewModelInject constructor(
 
     /** FROM REMOTE */
     var recipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
+    var searchResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
 
     fun getRecipesFromRemote(queries: Map<String, String>) = viewModelScope.launch {
         getRecipesSafeCall(queries)
+    }
+
+    fun searchRecipes(searchQuery: Map<String, String>) = viewModelScope.launch {
+        searchRecipesSafeCall(searchQuery)
     }
 
     private suspend fun getRecipesSafeCall(queries: Map<String, String>) {
@@ -40,7 +45,7 @@ class MainViewModel @ViewModelInject constructor(
         if (hasInternetConnection()) {
             try {
                 val response = repository.remote.getRecipes(queries)
-                recipesResponse.value = handleResponse(response)
+                recipesResponse.value = handleRecipesResponse(response)
 
                 val foodRecipe = recipesResponse.value!!.data
                 if (foodRecipe != null) offlineCacheRecipe(foodRecipe)
@@ -53,6 +58,20 @@ class MainViewModel @ViewModelInject constructor(
         }
     }
 
+    private suspend fun searchRecipesSafeCall(searchQuery: Map<String, String>) {
+        searchResponse.value = NetworkResult.Loading()
+        if (hasInternetConnection()) {
+            try {
+                val response = repository.remote.searchRecipes(searchQuery)
+                searchResponse.value = handleRecipesResponse(response)
+            } catch (e: Exception) {
+                searchResponse.value = NetworkResult.Error(message = "Recipes not found.")
+            }
+        } else {
+            searchResponse.value = NetworkResult.Error(message = "No internet connection.")
+        }
+    }
+
     // Store API's results in Database
     private fun offlineCacheRecipe(foodRecipe: FoodRecipe) {
         val recipesEntity = RecipesEntity(foodRecipe)
@@ -60,7 +79,7 @@ class MainViewModel @ViewModelInject constructor(
     }
 
     // Check the response from the API
-    private fun handleResponse(response: Response<FoodRecipe>): NetworkResult<FoodRecipe> {
+    private fun handleRecipesResponse(response: Response<FoodRecipe>): NetworkResult<FoodRecipe> {
         when {
             response.message().toString().contains("timeout") -> {
                 return NetworkResult.Error(message = "Timeout")

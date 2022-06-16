@@ -1,6 +1,7 @@
 package com.example.cookingrecipe.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,11 +16,12 @@ import com.example.cookingrecipe.viewModels.MainViewModel
 import com.example.cookingrecipe.R
 import com.example.cookingrecipe.adapters.RecipesAdapter
 import com.example.cookingrecipe.databinding.FragmentRecipesBinding
+import com.example.cookingrecipe.utils.NetworkListener
 import com.example.cookingrecipe.utils.NetworkResult
 import com.example.cookingrecipe.utils.observeOnce
 import com.example.cookingrecipe.viewModels.RecipesViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_recipes.view.*
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -34,6 +36,8 @@ class RecipesListFragment : Fragment() {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var recipesViewModel: RecipesViewModel
+
+    private lateinit var networkListener: NetworkListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,10 +57,26 @@ class RecipesListFragment : Fragment() {
 
         setupRecyclerView()
 
-        verifyDatabase()
+        recipesViewModel.getBackOnline.observe(viewLifecycleOwner) {
+            recipesViewModel.backOnline = it
+        }
+
+        lifecycleScope.launch {
+            networkListener = NetworkListener()
+            networkListener.checkConnection(requireContext()).collect {
+                Log.d("NetworkListener", it.toString())
+                recipesViewModel.hasNetwork = it
+                recipesViewModel.showNetworkStatus()
+                verifyDatabase()
+            }
+        }
 
         binding.sortRecipesFab.setOnClickListener {
-            findNavController().navigate(R.id.action_recipesFragment_to_listBottomSheetFragment)
+            if (recipesViewModel.hasNetwork) {
+                findNavController().navigate(R.id.action_recipesFragment_to_listBottomSheetFragment)
+            } else {
+                recipesViewModel.showNetworkStatus()
+            }
         }
 
         return binding.root

@@ -33,8 +33,8 @@ data class Result(
     val dairyFree: Boolean,
     @SerializedName("glutenFree")
     val glutenFree: Boolean,
-//    @SerializedName("extendedIngredients")
-//    val extendedIngredients: @RawValue List<ExtendedIngredient>,
+    @SerializedName("extendedIngredients")
+    val extendedIngredients: List<ExtendedIngredient>
 //    @SerializedName("cookingMinutes")
 //    val cookingMinutes: Int,
 //    @SerializedName("analyzedInstructions")

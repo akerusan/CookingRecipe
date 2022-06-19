@@ -5,7 +5,10 @@ class Constants {
     companion object {
 
         const val BASE_URL = "https://api.spoonacular.com"
+        const val BASE_IMAGE_URL = "https://spoonacular.com/cdn/ingredients_100x100/"
         const val API_KEY = "d1ccb03f5cb043e5ad1998d7c014a510"
+
+        const val RESULT_BUNDLE_KEY = "recipeBundle"
 
         // API queries
         const val QUERY_NUMBER = "number"

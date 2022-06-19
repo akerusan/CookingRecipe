@@ -10,14 +10,14 @@ import com.example.cookingrecipe.R
 import com.example.cookingrecipe.models.ExtendedIngredient
 import com.example.cookingrecipe.utils.Constants.Companion.BASE_IMAGE_URL
 import com.example.cookingrecipe.utils.RecipesDiffUtil
-import kotlinx.android.synthetic.main.ingredients_item.view.*
+import kotlinx.android.synthetic.main.item_ingredients.view.*
 
 class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.ViewHolder>() {
 
     private var ingredientsList = emptyList<ExtendedIngredient>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.ingredients_item, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_ingredients, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

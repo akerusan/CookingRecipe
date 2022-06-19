@@ -35,4 +35,6 @@
     <string name="diary_free">Diary Free</string>
     <string name="healthy">Healthy</string>
     <string name="cheap">Cheap</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="no_favorite_recipe">No Favorite Recipe</string>
 </resources>

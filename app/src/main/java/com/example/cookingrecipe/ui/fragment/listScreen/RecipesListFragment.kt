@@ -1,4 +1,4 @@
-package com.example.cookingrecipe.fragment.listScreen
+package com.example.cookingrecipe.ui.fragment.listScreen
 
 import android.os.Bundle
 import android.util.Log
@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cookingrecipe.viewModels.MainViewModel
 import com.example.cookingrecipe.R
 import com.example.cookingrecipe.adapters.RecipesAdapter
-import com.example.cookingrecipe.databinding.FragmentRecipesBinding
+import com.example.cookingrecipe.databinding.FragmentRecipesListBinding
 import com.example.cookingrecipe.models.FoodRecipe
 import com.example.cookingrecipe.utils.NetworkListener
 import com.example.cookingrecipe.utils.NetworkResult
@@ -29,7 +29,7 @@ class RecipesListFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private val args by navArgs<RecipesListFragmentArgs>()
 
-    private var _binding: FragmentRecipesBinding? = null
+    private var _binding: FragmentRecipesListBinding? = null
     private val binding get() = _binding!!
 
     private val mAdapter by lazy { RecipesAdapter() }
@@ -51,7 +51,7 @@ class RecipesListFragment : Fragment(), SearchView.OnQueryTextListener {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentRecipesBinding.inflate(inflater, container, false)
+        _binding = FragmentRecipesListBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
         binding.mainViewModel = viewModel
 

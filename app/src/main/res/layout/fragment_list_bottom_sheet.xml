@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    tools:context=".fragment.listScreen.ListBottomSheetFragment">
+    tools:context=".ui.fragment.listScreen.ListBottomSheetFragment">
 
     <TextView
         android:id="@+id/tv_meal_type"

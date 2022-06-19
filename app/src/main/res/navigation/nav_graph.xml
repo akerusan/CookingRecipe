@@ -8,9 +8,9 @@
 
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.example.cookingrecipe.fragment.listScreen.RecipesListFragment"
+        android:name="com.example.cookingrecipe.ui.fragment.listScreen.RecipesListFragment"
         android:label="Recipes"
-        tools:layout="@layout/fragment_recipes" >
+        tools:layout="@layout/fragment_recipes_list" >
         <action
             android:id="@+id/action_recipesFragment_to_listBottomSheetFragment"
             app:destination="@id/listBottomSheetFragment" />
@@ -25,19 +25,19 @@
 
     <fragment
         android:id="@+id/favoriteRecipesFragment"
-        android:name="com.example.cookingrecipe.fragment.FavoriteRecipesFragment"
+        android:name="com.example.cookingrecipe.ui.fragment.favoriteScreen.FavoriteRecipesFragment"
         android:label="Favorite Recipes"
-        tools:layout="@layout/fragment_favorite_recipes" />
+        tools:layout="@layout/fragment_recipes_favorite" />
 
     <fragment
         android:id="@+id/foodJokeFragment"
-        android:name="com.example.cookingrecipe.fragment.FoodJokeFragment"
+        android:name="com.example.cookingrecipe.ui.fragment.foodJokeScreen.FoodJokeFragment"
         android:label="Food Joke"
         tools:layout="@layout/fragment_food_joke" />
 
     <dialog
         android:id="@+id/listBottomSheetFragment"
-        android:name="com.example.cookingrecipe.fragment.listScreen.ListBottomSheetFragment"
+        android:name="com.example.cookingrecipe.ui.fragment.listScreen.ListBottomSheetFragment"
         android:label="fragment_list_bottom_sheet"
         tools:layout="@layout/fragment_list_bottom_sheet" >
         <action

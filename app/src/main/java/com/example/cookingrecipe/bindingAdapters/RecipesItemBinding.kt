@@ -10,7 +10,7 @@ import androidx.databinding.BindingAdapter
 import androidx.navigation.findNavController
 import coil.load
 import com.example.cookingrecipe.R
-import com.example.cookingrecipe.fragment.listScreen.RecipesListFragmentDirections
+import com.example.cookingrecipe.ui.fragment.listScreen.RecipesListFragmentDirections
 import com.example.cookingrecipe.models.Result
 import org.jsoup.Jsoup
 import java.lang.Exception

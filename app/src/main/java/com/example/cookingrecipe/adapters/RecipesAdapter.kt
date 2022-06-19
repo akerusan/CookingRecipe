@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.cookingrecipe.databinding.RecipesItemBinding
+import com.example.cookingrecipe.databinding.ItemRecipesListBinding
 import com.example.cookingrecipe.models.FoodRecipe
 import com.example.cookingrecipe.models.Result
 import com.example.cookingrecipe.utils.RecipesDiffUtil
@@ -36,7 +36,7 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.ViewHolder>() {
         diffUtilResult.dispatchUpdatesTo(this)
     }
 
-    class ViewHolder(private val binding: RecipesItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(private val binding: ItemRecipesListBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(recipe: Result) {
             binding.recipe = recipe
@@ -46,7 +46,7 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.ViewHolder>() {
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = RecipesItemBinding.inflate(layoutInflater, parent, false)
+                val binding = ItemRecipesListBinding.inflate(layoutInflater, parent, false)
                 return ViewHolder(binding)
             }
         }

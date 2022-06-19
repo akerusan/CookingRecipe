@@ -1,4 +1,4 @@
-package com.example.cookingrecipe.fragment.detailScreen
+package com.example.cookingrecipe.ui.fragment.detailScreen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

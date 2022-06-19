@@ -33,6 +33,8 @@ data class Result(
     val dairyFree: Boolean,
     @SerializedName("glutenFree")
     val glutenFree: Boolean,
+    @SerializedName("sourceUrl")
+    val sourceUrl: String,
     @SerializedName("extendedIngredients")
     val extendedIngredients: List<ExtendedIngredient>
 //    @SerializedName("cookingMinutes")
@@ -77,8 +79,6 @@ data class Result(
 //    val servings: Int,
 //    @SerializedName("sourceName")
 //    val sourceName: String,
-//    @SerializedName("sourceUrl")
-//    val sourceUrl: String,
 //    @SerializedName("spoonacularSourceUrl")
 //    val spoonacularSourceUrl: String,
 //    @SerializedName("sustainable")

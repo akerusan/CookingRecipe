@@ -1,4 +1,4 @@
-package com.example.cookingrecipe.fragment
+package com.example.cookingrecipe.fragment.listScreen
 
 import android.os.Bundle
 import android.util.Log

@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.example.cookingrecipe.fragment.RecipesListFragment"
+        android:name="com.example.cookingrecipe.fragment.listScreen.RecipesListFragment"
         android:label="Recipes"
         tools:layout="@layout/fragment_recipes" >
         <action
@@ -18,6 +18,9 @@
             android:name="backFromBottomSheet"
             app:argType="boolean"
             android:defaultValue="false" />
+        <action
+            android:id="@+id/action_recipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
     </fragment>
 
     <fragment
@@ -34,12 +37,22 @@
 
     <dialog
         android:id="@+id/listBottomSheetFragment"
-        android:name="com.example.cookingrecipe.fragment.ListBottomSheetFragment"
+        android:name="com.example.cookingrecipe.fragment.listScreen.ListBottomSheetFragment"
         android:label="fragment_list_bottom_sheet"
         tools:layout="@layout/fragment_list_bottom_sheet" >
         <action
             android:id="@+id/action_listBottomSheetFragment_to_recipesFragment"
             app:destination="@id/recipesFragment" />
     </dialog>
+
+    <activity
+        android:id="@+id/detailsActivity"
+        android:name="com.example.cookingrecipe.ui.DetailsActivity"
+        android:label="Details"
+        tools:layout="@layout/activity_details" >
+        <argument
+            android:name="result"
+            app:argType="com.example.cookingrecipe.models.Result" />
+    </activity>
 
 </navigation>

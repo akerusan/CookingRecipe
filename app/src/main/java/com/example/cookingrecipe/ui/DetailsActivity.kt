@@ -15,8 +15,8 @@ import com.example.cookingrecipe.data.database.entities.FavoritesEntity
 import com.example.cookingrecipe.ui.fragment.detailScreen.RecipeDetailsFragment
 import com.example.cookingrecipe.ui.fragment.detailScreen.RecipeIngredientsFragment
 import com.example.cookingrecipe.ui.fragment.detailScreen.RecipeInstructionsFragment
+import com.example.cookingrecipe.utils.Commons.Companion.showSnackBar
 import com.example.cookingrecipe.viewModels.MainViewModel
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_details.*
 import java.lang.Exception
@@ -92,7 +92,7 @@ class DetailsActivity : AppCompatActivity() {
         changeMenuItemColor(item, R.color.yellow)
 
         // Show a snackBar
-        Snackbar.make(detailsScreenLayout, "Recipe saved.", Snackbar.LENGTH_SHORT).setAction("Okay"){}.show()
+        showSnackBar(detailsScreenLayout, "Recipe saved.")
         recipeSaved = true
     }
 

@@ -32,4 +32,9 @@
     <color name="titleColor">@color/darker</color>
 
     <color name="mainColor">#4CAF50</color>
+    <color name="selectedMainColor">#104CAF50</color>
+
+    <color name="statusBarColor">@color/mainColor</color>
+    <color name="contextualStatusBarColor">@color/dark</color>
+    <color name="actionModeBackground">@color/dark</color>
 </resources>

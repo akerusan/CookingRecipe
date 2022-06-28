@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/share_joke"
+        android:title="@string/share_joke"
+        android:icon="@drawable/ic_share"
+        tools:targetApi="o"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/reload_joke"
+        android:title="@string/reload_screen"
+        android:icon="@drawable/ic_sync"
+        tools:targetApi="o"
+        app:showAsAction="ifRoom"/>
+
+</menu>

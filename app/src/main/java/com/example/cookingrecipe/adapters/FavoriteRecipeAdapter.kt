@@ -13,7 +13,6 @@ import com.example.cookingrecipe.ui.fragment.favoriteScreen.FavoriteRecipesFragm
 import com.example.cookingrecipe.utils.Commons.Companion.showSnackBar
 import com.example.cookingrecipe.utils.RecipesDiffUtil
 import com.example.cookingrecipe.viewModels.MainViewModel
-import kotlinx.android.synthetic.main.item_favorites.view.*
 
 class FavoriteRecipeAdapter(
     private val requireActivity: FragmentActivity,
@@ -41,7 +40,7 @@ class FavoriteRecipeAdapter(
         holder.bind(recipe)
 
         // Send to the recipe details screen
-        holder.itemView.favorites_item.setOnClickListener {
+        holder.binding.favoritesItem.setOnClickListener {
             if (multiSelection) {
                 applySelection(holder, recipe)
             } else {
@@ -50,7 +49,7 @@ class FavoriteRecipeAdapter(
             }
         }
         // Delete action mode by long clicking
-        holder.itemView.favorites_item.setOnLongClickListener {
+        holder.binding.favoritesItem.setOnLongClickListener {
             if (!multiSelection) {
                 multiSelection = true
                 requireActivity.startActionMode(this)
@@ -80,8 +79,8 @@ class FavoriteRecipeAdapter(
     }
 
     private fun changeRecipeStyle(viewHolder: FavoriteViewHolder, backgroundColor: Int, strokeColor: Int) {
-        viewHolder.itemView.cl_favorite_recipe_card.setBackgroundColor(ContextCompat.getColor(requireActivity, backgroundColor))
-        viewHolder.itemView.favorite_card_view_item.strokeColor = ContextCompat.getColor(requireActivity, strokeColor)
+        viewHolder.binding.clFavoriteRecipeCard.setBackgroundColor(ContextCompat.getColor(requireActivity, backgroundColor))
+        viewHolder.binding.favoriteCardViewItem.strokeColor = ContextCompat.getColor(requireActivity, strokeColor)
     }
 
     private fun applyActionModeTitle() {
@@ -155,7 +154,7 @@ class FavoriteRecipeAdapter(
         }
     }
 
-    class FavoriteViewHolder(private val binding: ItemFavoritesBinding): RecyclerView.ViewHolder(binding.root) {
+    class FavoriteViewHolder(val binding: ItemFavoritesBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(favoritesEntity: FavoritesEntity) {
             binding.favoritesEntity = favoritesEntity

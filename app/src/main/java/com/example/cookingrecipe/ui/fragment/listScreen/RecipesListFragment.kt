@@ -41,7 +41,6 @@ class RecipesListFragment : Fragment(), SearchView.OnQueryTextListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Initializing View Models
         viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
         recipesViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
     }
@@ -50,8 +49,8 @@ class RecipesListFragment : Fragment(), SearchView.OnQueryTextListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         _binding = FragmentRecipesListBinding.inflate(inflater, container, false)
+
         binding.lifecycleOwner = this
         binding.mainViewModel = viewModel
 
@@ -64,7 +63,7 @@ class RecipesListFragment : Fragment(), SearchView.OnQueryTextListener {
             recipesViewModel.backOnline = it
         }
 
-        lifecycleScope.launch {
+        lifecycleScope.launchWhenStarted {
             networkListener = NetworkListener()
             networkListener.checkConnection(requireContext()).collect {
                 Log.d("NetworkListener", it.toString())
@@ -174,8 +173,8 @@ class RecipesListFragment : Fragment(), SearchView.OnQueryTextListener {
         binding.recyclerView.hideShimmer()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 }

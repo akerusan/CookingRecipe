@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#4CAF50</color>
-    <color name="purple_700">#4CAF50</color>
-    <color name="teal_200">#4CAF50</color>
-    <color name="teal_700">#FF018786</color>
+    <color name="green_300">#81C784</color>
+    <color name="green_500">#4CAF50</color>
+    <color name="green_700">#388E3C</color>
+    <!--    <color name="teal_200">#4CAF50</color>-->
+    <!--    <color name="teal_700">#FF018786</color>-->
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
@@ -14,27 +15,39 @@
     <color name="darkGray">#4B4B4B</color>
     <color name="dark">#313C44</color>
     <color name="darker">#151B20</color>
+
     <color name="red">#FF4646</color>
     <color name="yellow">#FFC114</color>
     <color name="green">#00C980</color>
 
+    <!-- LIGHT MODE -->
+
     // Custom Chip
     <color name="checkedChipBackgroundColor">#CBFFCD</color>
     <color name="chipBackgroundColor">@color/lightGray</color>
-    <color name="checkedChipTextColor">@color/purple_500</color>
+    <color name="checkedChipTextColor">@color/green_500</color>
     <color name="chipTextColor">@color/darkGray</color>
 
-    <color name="actionBarBackgroundColor">@color/purple_500</color>
+    <color name="actionBarBackgroundColor">@color/green_500</color>
 
     // Ingredients Screen
     <color name="strokeColor">@color/lightMediumGray</color>
     <color name="cardBackgroundColor">@color/white</color>
-    <color name="titleColor">@color/darker</color>
+    <color name="titleColor">@color/darkGray</color>
 
     <color name="mainColor">#4CAF50</color>
     <color name="selectedMainColor">#104CAF50</color>
 
     <color name="statusBarColor">@color/mainColor</color>
     <color name="contextualStatusBarColor">@color/dark</color>
+    <color name="contextualActionBarColor">@color/dark</color>
     <color name="actionModeBackground">@color/dark</color>
+
+    <color name="backGroundColor">@color/lightGray</color>
+    <color name="placeHolderColor">@color/mediumGray</color>
+    <color name="descriptionColor">@color/darkGray</color>
+
+    <color name="bottomNavBackground">@color/lightGray</color>
+    <color name="bottomNavItemColor">@color/darkGray</color>
+    <color name="bottomNavCheckedItemColor">@color/green_500</color>
 </resources>

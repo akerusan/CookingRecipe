@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_CookingRecipe)
         setContentView(R.layout.activity_main)
 
         // Replacement for findNavController (not working)

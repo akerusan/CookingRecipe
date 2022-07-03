@@ -84,7 +84,7 @@
         android:text="Title"
         android:textSize="20sp"
         android:fontFamily="@font/courgette"
-        android:textColor="@color/darkGray"
+        android:textColor="@color/titleColor"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:src="@drawable/ic_check_mark"
-        app:tint="@color/darkGray"
+        app:tint="@color/titleColor"
         app:layout_constraintStart_toStartOf="@+id/tv_recipe_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_recipe_name" />
 
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/vegetarian"
-        android:textColor="@color/darkGray"
+        android:textColor="@color/titleColor"
         app:layout_constraintBottom_toBottomOf="@+id/iv_check_vegetarian"
         app:layout_constraintStart_toEndOf="@+id/iv_check_vegetarian"
         app:layout_constraintTop_toTopOf="@+id/iv_check_vegetarian" />
@@ -117,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:src="@drawable/ic_check_mark"
-        app:tint="@color/darkGray"
+        app:tint="@color/titleColor"
         app:layout_constraintStart_toStartOf="@+id/iv_check_vegetarian"
         app:layout_constraintTop_toBottomOf="@+id/iv_check_vegetarian" />
 
@@ -127,7 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/vegan"
-        android:textColor="@color/darkGray"
+        android:textColor="@color/titleColor"
         app:layout_constraintBottom_toBottomOf="@+id/iv_check_vegan"
         app:layout_constraintStart_toEndOf="@+id/iv_check_vegan"
         app:layout_constraintTop_toTopOf="@+id/iv_check_vegan" />
@@ -138,7 +138,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:src="@drawable/ic_check_mark"
-        app:tint="@color/darkGray"
+        app:tint="@color/titleColor"
         app:layout_constraintBottom_toBottomOf="@+id/tv_vegetarian"
         app:layout_constraintStart_toEndOf="@+id/tv_vegetarian"
         app:layout_constraintTop_toTopOf="@+id/tv_vegetarian" />
@@ -149,7 +149,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/gluten_free"
-        android:textColor="@color/darkGray"
+        android:textColor="@color/titleColor"
         app:layout_constraintBottom_toBottomOf="@+id/iv_check_gluten_free"
         app:layout_constraintStart_toEndOf="@+id/iv_check_gluten_free"
         app:layout_constraintTop_toTopOf="@+id/iv_check_gluten_free" />
@@ -160,7 +160,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:src="@drawable/ic_check_mark"
-        app:tint="@color/darkGray"
+        app:tint="@color/titleColor"
         app:layout_constraintStart_toStartOf="@+id/iv_check_gluten_free"
         app:layout_constraintTop_toBottomOf="@+id/iv_check_gluten_free" />
 
@@ -170,7 +170,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/diary_free"
-        android:textColor="@color/darkGray"
+        android:textColor="@color/titleColor"
         app:layout_constraintBottom_toBottomOf="@+id/iv_check_dairy_free"
         app:layout_constraintStart_toEndOf="@+id/iv_check_dairy_free"
         app:layout_constraintTop_toTopOf="@+id/iv_check_dairy_free" />
@@ -181,7 +181,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:src="@drawable/ic_check_mark"
-        app:tint="@color/darkGray"
+        app:tint="@color/titleColor"
         app:layout_constraintBottom_toBottomOf="@+id/tv_gluten_free"
         app:layout_constraintStart_toEndOf="@+id/tv_gluten_free"
         app:layout_constraintTop_toTopOf="@+id/tv_gluten_free" />
@@ -192,7 +192,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/healthy"
-        android:textColor="@color/darkGray"
+        android:textColor="@color/titleColor"
         app:layout_constraintBottom_toBottomOf="@+id/iv_check_healthy"
         app:layout_constraintStart_toEndOf="@+id/iv_check_healthy"
         app:layout_constraintTop_toTopOf="@+id/iv_check_healthy" />
@@ -203,7 +203,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:src="@drawable/ic_check_mark"
-        app:tint="@color/darkGray"
+        app:tint="@color/titleColor"
         app:layout_constraintStart_toStartOf="@+id/iv_check_healthy"
         app:layout_constraintTop_toBottomOf="@+id/iv_check_healthy" />
 
@@ -213,7 +213,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/cheap"
-        android:textColor="@color/darkGray"
+        android:textColor="@color/titleColor"
         app:layout_constraintBottom_toBottomOf="@+id/iv_check_cheap"
         app:layout_constraintStart_toEndOf="@+id/iv_check_cheap"
         app:layout_constraintTop_toTopOf="@+id/iv_check_cheap" />

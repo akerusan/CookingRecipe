@@ -11,7 +11,6 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/favorites_item"
-        android:background="@color/cardBackgroundColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="4dp">
@@ -26,20 +25,20 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:strokeColor="@color/lightMediumGray"
+            app:strokeColor="@color/strokeColor"
             app:strokeWidth="1dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_favorite_recipe_card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white">
+                android:background="@color/cardBackgroundColor">
 
                 <ImageView
                     android:id="@+id/iv_favorite_recipe_picture"
-                    android:layout_width="200dp"
-                    android:layout_height="0dp"
                     loadImageUrl="@{favoritesEntity.result.image}"
+                    android:layout_width="150dp"
+                    android:layout_height="0dp"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -51,13 +50,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="12dp"
                     android:ellipsize="end"
                     android:fontFamily="@font/courgette"
                     android:maxLines="2"
                     android:text="@{favoritesEntity.result.title}"
-                    android:textColor="@color/darker"
+                    android:textColor="@color/titleColor"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -67,13 +66,13 @@
 
                 <TextView
                     android:id="@+id/tv_favorite_description"
+                    parseHtml="@{favoritesEntity.result.summary}"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    parseHtml="@{favoritesEntity.result.summary}"
-                    android:textColor="@color/darkGray"
+                    android:textColor="@color/descriptionColor"
                     app:layout_constraintEnd_toEndOf="@+id/tv_favorite_recipe_name"
                     app:layout_constraintStart_toStartOf="@+id/tv_favorite_recipe_name"
                     app:layout_constraintTop_toBottomOf="@+id/tv_favorite_recipe_name" />
@@ -82,8 +81,8 @@
                     android:id="@+id/iv_favorite_likes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="36dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="26dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/tv_favorite_description"
                     app:layout_constraintTop_toBottomOf="@+id/tv_favorite_description"

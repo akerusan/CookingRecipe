@@ -7,7 +7,7 @@
         <item name="colorOnPrimary">@color/white</item>
         <item name="actionModeBackground">@color/contextualActionBarColor</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/green_300</item>
+        <item name="colorSecondary">@color/green_500</item>
         <item name="colorSecondaryVariant">@color/green_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->

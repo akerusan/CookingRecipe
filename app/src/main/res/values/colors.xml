@@ -35,10 +35,9 @@
     <color name="cardBackgroundColor">@color/white</color>
     <color name="titleColor">@color/darkGray</color>
 
-    <color name="mainColor">#4CAF50</color>
     <color name="selectedMainColor">#104CAF50</color>
 
-    <color name="statusBarColor">@color/mainColor</color>
+    <color name="statusBarColor">@color/green_500</color>
     <color name="contextualStatusBarColor">@color/dark</color>
     <color name="contextualActionBarColor">@color/dark</color>
     <color name="actionModeBackground">@color/dark</color>

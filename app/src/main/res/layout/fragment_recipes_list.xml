@@ -70,8 +70,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:visibility="invisible"
-            getApiResponseForText="@{mainViewModel.recipesResponse}"
-            getDatabaseForText="@{mainViewModel.getRecipesFromLocal}"
+            getApiResponse="@{mainViewModel.recipesResponse}"
+            getDatabase="@{mainViewModel.getRecipesFromLocal}"
             app:layout_constraintEnd_toEndOf="@+id/iv_error"
             app:layout_constraintStart_toStartOf="@+id/iv_error"
             app:layout_constraintTop_toBottomOf="@+id/iv_error" />

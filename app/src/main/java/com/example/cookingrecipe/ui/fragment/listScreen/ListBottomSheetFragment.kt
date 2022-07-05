@@ -32,13 +32,13 @@ class ListBottomSheetFragment : BottomSheetDialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Initializing View Model
-        viewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity())[RecipesViewModel::class.java]
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding =  FragmentListBottomSheetBinding.inflate(inflater, container, false)
 
@@ -68,7 +68,8 @@ class ListBottomSheetFragment : BottomSheetDialogFragment() {
         binding.bottomSheetApplyButton.setOnClickListener {
             viewModel.saveMealAndDietType(mealTypeChip, mealTypeIdChip, dietTypeChip, dietTypeIdChip)
 
-            val action = ListBottomSheetFragmentDirections.actionListBottomSheetFragmentToRecipesFragment(true)
+            val action = ListBottomSheetFragmentDirections.actionListBottomSheetFragmentToRecipesFragment()
+            action.backFromBottomSheet = true
             findNavController().navigate(action)
         }
 

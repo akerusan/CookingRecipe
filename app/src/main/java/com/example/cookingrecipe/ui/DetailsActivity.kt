@@ -68,10 +68,10 @@ class DetailsActivity : AppCompatActivity() {
          }.attach()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.details_menu, menu)
         // check if recipe has already been saved
-        val menuItem = menu?.findItem(R.id.add_to_favorites_menu)
+        val menuItem = menu.findItem(R.id.add_to_favorites_menu)
         checkFavoriteRecipes(menuItem!!)
         return true
     }

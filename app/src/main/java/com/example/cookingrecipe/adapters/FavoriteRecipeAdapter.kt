@@ -73,7 +73,7 @@ class FavoriteRecipeAdapter(
             applyActionModeTitle()
         } else {
             selectedRecipesList.add(recipe)
-            changeRecipeStyle(viewHolder, R.color.selectedMainColor, R.color.mainColor)
+            changeRecipeStyle(viewHolder, R.color.selectedMainColor, R.color.green_500)
             applyActionModeTitle()
         }
     }

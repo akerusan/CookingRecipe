@@ -33,7 +33,6 @@
     <color name="cardBackgroundColor">@color/darker</color>
     <color name="titleColor">@color/mediumGray</color>
 
-    <color name="mainColor">#4CAF50</color>
     <color name="selectedMainColor">#104CAF50</color>
 
     <color name="statusBarColor">@color/darker</color>
@@ -49,5 +48,5 @@
 
     <color name="bottomNavBackground">@color/darker</color>
     <color name="bottomNavItemColor">@color/mediumGray</color>
-    <color name="bottomNavCheckedItemColor">@color/green_300</color>
+    <color name="bottomNavCheckedItemColor">@color/green_500</color>
 </resources>
